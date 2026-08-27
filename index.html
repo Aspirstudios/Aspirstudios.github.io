@@ -6,12 +6,19 @@ layout: null
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO / Texto de presentación en buscadores -->
   <title>{{ site.title | default: "ASPIR STUDIOS" }}</title>
+  <meta name="description" content="{{ site.description | default: "Aspir Studios - Desarrollo de software y proyectos experimentales. Hogar de Aspir Shell para Windows." }}">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
+  <link rel="apple-touch-icon" href="{{ '/favicon.ico' | relative_url }}">
 
   <style>
     /* =========================================================
        ASPIR STUDIOS
-       Diseño ultra simple: blanco + negro
+       Diseño simple: hueso + negro
        ========================================================= */
 
     * {
@@ -22,7 +29,7 @@ layout: null
     body {
       margin: 0;
       padding: 0;
-      background: #fff;
+      background: #f5f0e6; /* color hueso */
       color: #000;
     }
 
@@ -50,8 +57,16 @@ layout: null
     /* Cabecera */
     .header {
       padding: 20px 0;
-      border-bottom: 2px solid #000;
+      border-bottom: 4px solid #000;
       margin-bottom: 32px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .header h1 {
@@ -63,8 +78,35 @@ layout: null
       letter-spacing: -1px;
     }
 
+    .header h1 a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .header h1 a:hover {
+      text-decoration: underline;
+    }
+
+    /* Barra de navegación */
+    .nav {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav a {
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
+    }
+
+    .nav a:hover {
+      border-bottom: 2px solid #000;
+    }
+
     .header p {
-      margin: 7px 0 0;
+      margin: 12px 0 0;
       color: #333;
       font-size: 14px;
     }
@@ -79,7 +121,7 @@ layout: null
     .post {
       margin: 0 0 32px;
       padding: 0 0 30px;
-      border-bottom: 1px solid #000;
+      border-bottom: 3px solid #000;
     }
 
     /* Títulos */
@@ -147,7 +189,7 @@ layout: null
       max-width: 100%;
       height: auto;
       margin: 20px auto;
-      border: 1px solid #000;
+      border: 3px solid #000;
     }
 
     .post-body iframe,
@@ -161,9 +203,9 @@ layout: null
       max-width: 100%;
       overflow-x: auto;
       padding: 14px;
-      background: #fff;
+      background: #f5f0e6;
       color: #000;
-      border: 1px solid #000;
+      border: 3px solid #000;
       font-family: "Courier New", monospace;
       font-size: 13px;
       line-height: 1.5;
@@ -177,7 +219,7 @@ layout: null
     .post-body blockquote {
       margin: 20px 0;
       padding: 8px 16px;
-      border-left: 3px solid #000;
+      border-left: 4px solid #000;
     }
 
     .post-body ul,
@@ -196,7 +238,7 @@ layout: null
     /* Mensaje sin entradas */
     .empty {
       padding: 20px 0;
-      border: 1px solid #000;
+      border: 3px solid #000;
       text-align: center;
     }
 
@@ -214,7 +256,7 @@ layout: null
     .footer {
       margin-top: 50px;
       padding: 15px 0;
-      border-top: 2px solid #000;
+      border-top: 4px solid #000;
       color: #333;
       font-size: 12px;
     }
@@ -233,6 +275,11 @@ layout: null
         font-size: 25px;
       }
 
+      .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       .post-title {
         font-size: 23px;
       }
@@ -249,7 +296,18 @@ layout: null
   <div class="site">
 
     <header class="header">
-      <h1>{{ site.title | default: "ASPIR STUDIOS" }}</h1>
+      <div class="header-top">
+        <h1>
+          <a href="{{ '/' | relative_url }}">{{ site.title | default: "ASPIR STUDIOS" }}</a>
+        </h1>
+
+        <nav class="nav">
+          <a href="{{ '/' | relative_url }}">Inicio</a>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+          <a href="{{ '/tags/' | relative_url }}">Tags</a>
+        </nav>
+      </div>
+
       {% if site.description %}
         <p>{{ site.description }}</p>
       {% endif %}
