@@ -1,0 +1,325 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.title | default: "ASPIR STUDIOS" }}</title>
+
+  <style>
+    /* =========================================================
+       ASPIR STUDIOS
+       Diseño ultra simple: blanco + negro
+       ========================================================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #000;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    /* Contenedor principal */
+    .site {
+      width: min(900px, calc(100% - 32px));
+      margin: 32px auto;
+    }
+
+    /* Cabecera */
+    .header {
+      padding: 20px 0;
+      border-bottom: 2px solid #000;
+      margin-bottom: 32px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 30px;
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .header p {
+      margin: 7px 0 0;
+      color: #333;
+      font-size: 14px;
+    }
+
+    /* Lista de entradas */
+    .posts {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Entrada */
+    .post {
+      margin: 0 0 32px;
+      padding: 0 0 30px;
+      border-bottom: 1px solid #000;
+    }
+
+    /* Títulos */
+    .post-title {
+      margin: 0 0 6px;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 26px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+    }
+
+    .post-title a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .post-title a:hover {
+      text-decoration: underline;
+    }
+
+    /* Fecha / autor */
+    .post-meta {
+      margin: 0 0 18px;
+      color: #444;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    /* Texto */
+    .post-body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .post-body p {
+      margin: 0 0 18px;
+    }
+
+    .post-body h1,
+    .post-body h2,
+    .post-body h3,
+    .post-body h4,
+    .post-body h5,
+    .post-body h6 {
+      margin: 28px 0 12px;
+      color: #000;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.25;
+    }
+
+    .post-body h1 { font-size: 27px; }
+    .post-body h2 { font-size: 23px; }
+    .post-body h3 { font-size: 20px; }
+    .post-body h4,
+    .post-body h5,
+    .post-body h6 { font-size: 17px; }
+
+    .post-body img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 20px auto;
+      border: 1px solid #000;
+    }
+
+    .post-body iframe,
+    .post-body video {
+      display: block;
+      max-width: 100%;
+      margin: 20px auto;
+    }
+
+    .post-body pre {
+      max-width: 100%;
+      overflow-x: auto;
+      padding: 14px;
+      background: #fff;
+      color: #000;
+      border: 1px solid #000;
+      font-family: "Courier New", monospace;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .post-body code {
+      font-family: "Courier New", monospace;
+      font-size: 0.9em;
+    }
+
+    .post-body blockquote {
+      margin: 20px 0;
+      padding: 8px 16px;
+      border-left: 3px solid #000;
+    }
+
+    .post-body ul,
+    .post-body ol {
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    /* Etiquetas */
+    .tags {
+      margin-top: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    /* Mensaje sin entradas */
+    .empty {
+      padding: 20px 0;
+      border: 1px solid #000;
+      text-align: center;
+    }
+
+    /* Paginación */
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 10px;
+      padding-top: 20px;
+      font-size: 13px;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 50px;
+      padding: 15px 0;
+      border-top: 2px solid #000;
+      color: #333;
+      font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .site {
+        width: calc(100% - 24px);
+        margin: 20px auto;
+      }
+
+      .header {
+        margin-bottom: 24px;
+      }
+
+      .header h1 {
+        font-size: 25px;
+      }
+
+      .post-title {
+        font-size: 23px;
+      }
+
+      .post-body {
+        font-size: 16px;
+        line-height: 1.7;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site">
+
+    <header class="header">
+      <h1>{{ site.title | default: "ASPIR STUDIOS" }}</h1>
+      {% if site.description %}
+        <p>{{ site.description }}</p>
+      {% endif %}
+    </header>
+
+    <main class="posts">
+      {% if paginator.posts %}
+        {% assign entries = paginator.posts %}
+      {% else %}
+        {% assign entries = site.posts %}
+      {% endif %}
+
+      {% if entries.size > 0 %}
+        {% for post in entries %}
+          <article class="post">
+            <h2 class="post-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+
+            <div class="post-meta">
+              {{ post.date | date: "%d/%m/%Y" }}
+              {% if post.author %}
+                · {{ post.author }}
+              {% endif %}
+            </div>
+
+            <div class="post-body">
+              {{ post.content }}
+            </div>
+
+            {% if post.tags.size > 0 %}
+              <div class="tags">
+                {% for tag in post.tags %}
+                  <a href="{{ '/tags/' | append: tag | slugify | relative_url }}">{{ tag }}</a>{% unless forloop.last %} · {% endunless %}
+                {% endfor %}
+              </div>
+            {% endif %}
+          </article>
+        {% endfor %}
+      {% else %}
+        <div class="empty">
+          No hay entradas todavía.
+        </div>
+      {% endif %}
+    </main>
+
+    {% if paginator %}
+      <nav class="pagination" aria-label="Paginación">
+        <span>
+          {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path | relative_url }}">← Anteriores</a>
+          {% endif %}
+        </span>
+
+        <span>
+          Página {{ paginator.page }} / {{ paginator.total_pages }}
+        </span>
+
+        <span>
+          {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | relative_url }}">Siguientes →</a>
+          {% endif %}
+        </span>
+      </nav>
+    {% endif %}
+
+    <footer class="footer">
+      {{ site.title | default: "ASPIR STUDIOS" }}
+    </footer>
+
+  </div>
+</body>
+</html>
