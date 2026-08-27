@@ -18,7 +18,8 @@
 
 ### Enlaces
 
-- [Github]([https://aspirstudios.blogspot.com](https://github.com/Aspirstudios)
+- [Github](https://github.com/Aspirstudios)
 - [Blog](https://aspirstudios.blogspot.com)
 - [X / Twitter](https://x.com/Aspir_studios)
 - [GitHub Pages](https://aspirstudios.github.io)
+  <br/>
