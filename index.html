@@ -7,20 +7,15 @@ layout: null
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- SEO / Texto de presentación en buscadores -->
+  <!-- SEO -->
   <title>{{ site.title | default: "ASPIR STUDIOS" }}</title>
-  <meta name="description" content="{{ site.description | default: "We work on diversal proyects, our greatest creation aspir shell, discover more in aspirstudios.blogspot.com." }}">
+  <meta name="description" content="We work on diversal proyects, our greatest creation aspir shell, discover more in aspirstudios.blogspot.com">
   
   <!-- Favicon -->
   <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
   <link rel="apple-touch-icon" href="{{ '/favicon.ico' | relative_url }}">
 
   <style>
-    /* =========================================================
-       ASPIR STUDIOS
-       Diseño simple: hueso + negro
-       ========================================================= */
-
     * {
       box-sizing: border-box;
     }
@@ -29,7 +24,7 @@ layout: null
     body {
       margin: 0;
       padding: 0;
-      background: #f5f0e6; /* color hueso */
+      background: #f5f0e6;
       color: #000;
     }
 
@@ -48,7 +43,6 @@ layout: null
       text-decoration: none;
     }
 
-    /* Contenedor principal */
     .site {
       width: min(900px, calc(100% - 32px));
       margin: 32px auto;
@@ -71,7 +65,6 @@ layout: null
 
     .header h1 {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
       font-size: 30px;
       line-height: 1.1;
       font-weight: 700;
@@ -93,6 +86,7 @@ layout: null
       gap: 18px;
       font-size: 14px;
       font-weight: 600;
+      flex-wrap: wrap;
     }
 
     .nav a {
@@ -111,24 +105,20 @@ layout: null
       font-size: 14px;
     }
 
-    /* Lista de entradas */
+    /* Entradas */
     .posts {
       margin: 0;
       padding: 0;
     }
 
-    /* Entrada */
     .post {
       margin: 0 0 32px;
       padding: 0 0 30px;
       border-bottom: 3px solid #000;
     }
 
-    /* Títulos */
     .post-title {
       margin: 0 0 6px;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
       font-size: 26px;
       line-height: 1.2;
       font-weight: 700;
@@ -144,16 +134,12 @@ layout: null
       text-decoration: underline;
     }
 
-    /* Fecha / autor */
     .post-meta {
       margin: 0 0 18px;
       color: #444;
-      font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
-      line-height: 1.4;
     }
 
-    /* Texto */
     .post-body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
@@ -172,7 +158,6 @@ layout: null
     .post-body h5,
     .post-body h6 {
       margin: 28px 0 12px;
-      color: #000;
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.25;
     }
@@ -204,7 +189,6 @@ layout: null
       overflow-x: auto;
       padding: 14px;
       background: #f5f0e6;
-      color: #000;
       border: 3px solid #000;
       font-family: "Courier New", monospace;
       font-size: 13px;
@@ -228,14 +212,7 @@ layout: null
       margin-bottom: 18px;
     }
 
-    /* Etiquetas */
-    .tags {
-      margin-top: 18px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-    }
-
-    /* Mensaje sin entradas */
+    /* Sin entradas */
     .empty {
       padding: 20px 0;
       border: 3px solid #000;
@@ -265,10 +242,6 @@ layout: null
       .site {
         width: calc(100% - 24px);
         margin: 20px auto;
-      }
-
-      .header {
-        margin-bottom: 24px;
       }
 
       .header h1 {
@@ -303,14 +276,12 @@ layout: null
 
         <nav class="nav">
           <a href="{{ '/' | relative_url }}">Inicio</a>
-          <a href="{{ '/Blog/' | relative_url }}">aspirstudios.blogspot.com</a>
-          <a href="{{ '/X/' | relative_url }}">https://x.com/Aspir_studios</a>
+          <a href="https://aspirstudios.blogspot.com" target="_blank" rel="noopener">aspirstudios.blogspot.com</a>
+          <a href="https://x.com/Aspir_studios" target="_blank" rel="noopener">https://x.com/Aspir_studios</a>
         </nav>
       </div>
 
-      {% if site.description %}
-        <p>{{ site.description }}</p>
-      {% endif %}
+      <p>We work on diversal proyects, our greatest creation aspir shell, discover more in aspirstudios.blogspot.com</p>
     </header>
 
     <main class="posts">
@@ -337,14 +308,6 @@ layout: null
             <div class="post-body">
               {{ post.content }}
             </div>
-
-            {% if post.tags.size > 0 %}
-              <div class="tags">
-                {% for tag in post.tags %}
-                  <a href="{{ '/tags/' | append: tag | slugify | relative_url }}">{{ tag }}</a>{% unless forloop.last %} · {% endunless %}
-                {% endfor %}
-              </div>
-            {% endif %}
           </article>
         {% endfor %}
       {% else %}
