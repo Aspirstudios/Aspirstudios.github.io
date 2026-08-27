@@ -1,0 +1,23 @@
+title: ASPIR STUDIOS
+description: "Tu descripción aquí"
+
+# URL de tu sitio (importante en GitHub Pages)
+url: "https://tuusuario.github.io"
+baseurl: "/nombre-del-repo"   # déjalo vacío "" si es el repo username.github.io
+
+# Paginación
+paginate: 5
+paginate_path: "/page:num/"
+
+# Plugins permitidos en GitHub Pages
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Markdown
+markdown: kramdown
+highlighter: rouge
+
+# Zona horaria (opcional)
+timezone: Europe/Madrid
